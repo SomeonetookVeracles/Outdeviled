@@ -2,7 +2,7 @@ extends Control
 
 # Called when the scene enters the scene tree
 func _ready():
-	# Connect buttons to functions
+	# Connect buttons with functions
 	$VBoxContainer/ContinueButton.pressed.connect(_on_continue_pressed)
 	$VBoxContainer/NewGameButton.pressed.connect(_on_new_game_pressed)
 	$VBoxContainer/OptionsButton.pressed.connect(_on_options_pressed)
@@ -15,9 +15,9 @@ func _ready():
 
 
 func _on_continue_pressed():
-	# Load the game from a save
+	# Load game from a save
 	print("Continue game")
-	# Replace with load logic
+	# Replace w/ load logic
 	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
 
 
@@ -26,7 +26,7 @@ func _on_new_game_pressed():
 	#! TODO - Add a confirmation prompt
 	print("New game")
 	# Replace with game scene 
-	get_tree().change_scene_to_file("res://Scenes/Game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Test_scene.tscn")
 
 
 func _on_options_pressed():

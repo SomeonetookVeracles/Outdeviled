@@ -18,7 +18,7 @@ func _ready():
 	set_process(true)
 	set_process_internal(true)  # Enable running in editor
 
-func _process(delta):
+func _process(_delta):
 	# Detect changes to grid_offset or show_debug_points at runtime or editor time
 	if grid_offset != last_grid_offset:
 		last_grid_offset = grid_offset

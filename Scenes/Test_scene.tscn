@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=4 uid="uid://cyuujd2a86cij"]
 
-[ext_resource type="Texture2D" uid="uid://cjgocpl4sn4l" path="res://images/isometric-sandbox-sheet.png" id="1_ffkfd"]
-[ext_resource type="Script" uid="uid://ddoh2m508es4" path="res://scripts/terrainGrid.gd" id="2_sxtyt"]
-[ext_resource type="Texture2D" uid="uid://ru2g6dbfceup" path="res://images/placeholder pip.png" id="3_h8qsc"]
+[ext_resource type="Texture2D" uid="uid://cjgocpl4sn4l" path="res://images/isometric-sandbox-sheet.png" id="1_mw2no"]
+[ext_resource type="Script" uid="uid://ddoh2m508es4" path="res://scripts/terrainGrid.gd" id="2_g1f5i"]
+[ext_resource type="Texture2D" uid="uid://ru2g6dbfceup" path="res://images/placeholder pip.png" id="3_0lt7i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
-texture = ExtResource("1_ffkfd")
+texture = ExtResource("1_mw2no")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -79,8 +79,8 @@ tile_map_data = PackedByteArray("AAD9/wMAAAABAAMAAAD9/wIAAAABAAMAAAD9////AAABAAM
 tile_set = SubResource("TileSet_h2yge")
 
 [node name="TerrainGrid" type="Node2D" parent="."]
-script = ExtResource("2_sxtyt")
+script = ExtResource("2_g1f5i")
 tile_size = Vector2(32, 16)
 grid_offset = Vector2(0, -56)
 show_debug_points = false
-icon_texture = ExtResource("3_h8qsc")
+icon_texture = ExtResource("3_0lt7i")
