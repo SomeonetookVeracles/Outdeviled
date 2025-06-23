@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=4 uid="uid://cyuujd2a86cij"]
+
+[ext_resource type="Texture2D" uid="uid://cjgocpl4sn4l" path="res://images/isometric-sandbox-sheet.png" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://v0mnhq1hlb6y" path="res://scripts/tileleveldetector.gd" id="2_0xm2m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
+texture = ExtResource("1_ig7tw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_h2yge"]
+tile_shape = 1
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_0xm2m")
+
+[node name="Main" type="Node2D"]
+
+[node name="Terrain" type="Node" parent="."]
+
+[node name="Layer 0" type="TileMapLayer" parent="Terrain"]
+tile_map_data = PackedByteArray("AAD//wAAAAABAAMAAAAAAAAAAAABAAMAAAAAAAEAAAABAAIAAAD//wEAAAABAAMAAAD//wIAAAABAAMAAAABAAIAAAABAAMAAAAAAAIAAAABAAIAAAABAAEAAAABAAIAAAABAAAAAAABAAMAAAACAAAAAAABAAMAAAACAAEAAAABAAIAAAACAAIAAAABAAIAAAAAAAMAAAABAAIAAAD//wMAAAABAAMAAAABAAMAAAABAAIAAAACAAMAAAABAAIAAAABAAQAAAABAAMAAAAAAAQAAAABAAMAAAD//wQAAAABAAMAAAACAAQAAAABAAMAAAADAAMAAAABAAMAAAADAAIAAAABAAMAAAADAAEAAAABAAMAAAADAAAAAAABAAMAAAADAAQAAAABAAMAAAD+/wIAAAAFAAMAAAD+/wEAAAAFAAMAAAD+/wMAAAAAAAMAAAD+/wQAAAAAAAMAAAD+/wAAAAAAAAMAAAD+////AAAAAAMAAAD/////AAAAAAMAAAAAAP//AAAEAAMAAAABAP//AAAEAAMAAAACAP//AAAAAAMAAAADAP//AAAAAAMAAAADAP7/AAAFAAQAAAADAP3/AAAFAAQAAAD9/wQAAAAEAAUAAAD8/wQAAAAEAAUAAAA=")
+tile_set = SubResource("TileSet_h2yge")
+
+[node name="Layer 1" type="TileMapLayer" parent="Terrain"]
+tile_map_data = PackedByteArray("AAD9/wMAAAABAAMAAAD9/wIAAAABAAMAAAD9////AAABAAMAAAD+//7/AAABAAMAAAD9//7/AAAAAAMAAAACAP7/AAABAAMAAAABAP7/AAABAAMAAAACAP3/AAABAAcAAAABAP3/AAABAAcAAAAAAP3/AAABAAcAAAD///3/AAABAAcAAAD+//3/AAABAAcAAAD9//3/AAABAAcAAAD8////AAABAAcAAAD8/wAAAAABAAcAAAD8/wEAAAABAAcAAAD8/wIAAAABAAcAAAD8/wMAAAABAAcAAAD7/wMAAAABAAcAAAD7/wIAAAABAAcAAAD7/wEAAAABAAcAAAD7/wAAAAABAAcAAAD7////AAABAAcAAAACAPz/AAABAAcAAAABAPz/AAABAAcAAAAAAPz/AAABAAcAAAD///z/AAABAAcAAAD+//z/AAABAAcAAAD9//z/AAABAAcAAAD7//7/AAABAAcAAAD8//7/AAABAAcAAAD8//z/AAABAAcAAAD7//3/AAABAAcAAAD7//z/AAABAAcAAAABAAIAAAAAAAMAAAA=")
+tile_set = SubResource("TileSet_h2yge")
+
+[node name="Gridoverlay" type="Node2D" parent="."]
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Tileleveldetector" type="Node" parent="."]
+script = ExtResource("2_0xm2m")

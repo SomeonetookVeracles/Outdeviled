@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://cyuujd2a86cij"]
+[gd_scene load_steps=6 format=4 uid="uid://cyuujd2a86cij"]
 
 [ext_resource type="Texture2D" uid="uid://cjgocpl4sn4l" path="res://images/isometric-sandbox-sheet.png" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://ddoh2m508es4" path="res://scripts/terrainGrid.gd" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://ru2g6dbfceup" path="res://images/placeholder pip.png" id="3_h2yge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_ig7tw")
@@ -57,13 +59,27 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_h2yge"]
 tile_shape = 1
 tile_layout = 5
-tile_size = Vector2i(32, 18)
+tile_offset_axis = 1
+tile_size = Vector2i(32, 16)
 sources/0 = SubResource("TileSetAtlasSource_0xm2m")
 
 [node name="Main" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
 [node name="Terrain" type="Node" parent="."]
 
 [node name="Layer 0" type="TileMapLayer" parent="Terrain"]
-tile_map_data = PackedByteArray("AAD//wAAAAABAAMAAAAAAAAAAAABAAMAAAAAAAEAAAABAAMAAAD//wEAAAABAAMAAAD//wIAAAABAAMAAAABAAIAAAABAAMAAAAAAAIAAAABAAMAAAABAAEAAAABAAMAAAABAAAAAAABAAMAAAACAAAAAAABAAMAAAACAAEAAAABAAMAAAACAAIAAAABAAMAAAAAAAMAAAABAAMAAAD//wMAAAABAAMAAAABAAMAAAABAAMAAAACAAMAAAABAAMAAAABAAQAAAABAAMAAAAAAAQAAAABAAMAAAD//wQAAAABAAMAAAACAAQAAAABAAMAAAADAAMAAAABAAMAAAADAAIAAAABAAMAAAADAAEAAAABAAMAAAADAAAAAAABAAMAAAADAAQAAAABAAMAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAAABAAMAAAAAAAAAAAABAAMAAAD//wEAAAABAAMAAAD//wIAAAABAAMAAAABAAAAAAABAAMAAAACAAAAAAABAAMAAAD//wMAAAABAAMAAAABAAQAAAABAAMAAAAAAAQAAAABAAMAAAD//wQAAAABAAMAAAACAAQAAAABAAMAAAADAAMAAAABAAMAAAADAAIAAAABAAMAAAADAAEAAAABAAMAAAADAAAAAAABAAMAAAADAAQAAAABAAMAAAD+/wIAAAAFAAMAAAD+/wEAAAAFAAMAAAD+/wMAAAAAAAMAAAD+/wQAAAAAAAMAAAD+/wAAAAAAAAMAAAD+////AAAAAAMAAAD/////AAAAAAMAAAAAAP//AAAEAAMAAAABAP//AAAEAAMAAAACAP//AAAAAAMAAAADAP//AAAAAAMAAAADAP7/AAAFAAQAAAADAP3/AAAFAAQAAAD9/wQAAAAEAAUAAAD8/wQAAAAEAAUAAAABAAIAAAAAAAMAAAA=")
 tile_set = SubResource("TileSet_h2yge")
+
+[node name="Layer 1" type="TileMapLayer" parent="Terrain"]
+tile_map_data = PackedByteArray("AAD9/wMAAAABAAMAAAD9/wIAAAABAAMAAAD9////AAABAAMAAAD+//7/AAABAAMAAAD9//7/AAAAAAMAAAACAP7/AAABAAMAAAABAP7/AAABAAMAAAACAP3/AAABAAcAAAABAP3/AAABAAcAAAAAAP3/AAABAAcAAAD///3/AAABAAcAAAD+//3/AAABAAcAAAD9//3/AAABAAcAAAD8////AAABAAcAAAD8/wAAAAABAAcAAAD8/wEAAAABAAcAAAD8/wIAAAABAAcAAAD8/wMAAAABAAcAAAD7/wMAAAABAAcAAAD7/wIAAAABAAcAAAD7/wEAAAABAAcAAAD7/wAAAAABAAcAAAD7////AAABAAcAAAACAPz/AAABAAcAAAABAPz/AAABAAcAAAAAAPz/AAABAAcAAAD///z/AAABAAcAAAD+//z/AAABAAcAAAD9//z/AAABAAcAAAD7//7/AAABAAcAAAD8//7/AAABAAcAAAD8//z/AAABAAcAAAD7//3/AAABAAcAAAD7//z/AAABAAcAAAA=")
+tile_set = SubResource("TileSet_h2yge")
+
+[node name="TerrainGrid" type="Node2D" parent="."]
+script = ExtResource("2_0xm2m")
+tile_size = Vector2(32, 16)
+grid_offset = Vector2(0, -56)
+icon_texture = ExtResource("3_h2yge")
