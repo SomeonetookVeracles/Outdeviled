@@ -82,4 +82,5 @@ tile_set = SubResource("TileSet_h2yge")
 script = ExtResource("2_0xm2m")
 tile_size = Vector2(32, 16)
 grid_offset = Vector2(0, -56)
+show_debug_points = false
 icon_texture = ExtResource("3_h2yge")
