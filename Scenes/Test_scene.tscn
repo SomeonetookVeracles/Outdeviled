@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://cyuujd2a86cij"]
+[gd_scene load_steps=6 format=4 uid="uid://cyuujd2a86cij"]
 
 [ext_resource type="Texture2D" uid="uid://cjgocpl4sn4l" path="res://images/isometric-sandbox-sheet.png" id="1_mw2no"]
 [ext_resource type="Script" uid="uid://dsaesuy3dybei" path="res://scripts/astar.gd" id="2_753rh"]
+[ext_resource type="PackedScene" uid="uid://ca3wchqgt6ohb" path="res://Scenes/test_player.tscn" id="3_mw2no"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_mw2no")
@@ -130,4 +131,6 @@ terrain_node = NodePath("../Terrain")
 grid_size = Vector2i(8, 8)
 cell_size = Vector2(32, 16)
 debug_offset = Vector2(0, -6)
-debug_draw = true
+
+[node name="PathfindingCharacter" parent="." instance=ExtResource("3_mw2no")]
+position = Vector2(-10, 45)
