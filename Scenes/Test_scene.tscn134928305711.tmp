@@ -1,10 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://cyuujd2a86cij"]
+[gd_scene load_steps=8 format=4 uid="uid://cyuujd2a86cij"]
 
 [ext_resource type="Texture2D" uid="uid://cjgocpl4sn4l" path="res://images/isometric-sandbox-sheet.png" id="1_mw2no"]
 [ext_resource type="Script" uid="uid://dsaesuy3dybei" path="res://scripts/astar.gd" id="2_753rh"]
 [ext_resource type="Script" uid="uid://geuw5ko0ut45" path="res://scripts/testchar.gd" id="3_mw2no"]
-[ext_resource type="Script" uid="uid://bcxe3d7lukl3c" path="res://scripts/MovementProfileManager.gd" id="4_0lt7i"]
-[ext_resource type="Script" uid="uid://ys6u0a58m8y4" path="res://scripts/SimpleSelectionManager.gd" id="5_c6sic"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_mw2no")
@@ -129,33 +127,24 @@ tile_map_data = PackedByteArray("AAD//wQAAAAAAAMAAAD//wMAAAAAAAMAAAD//wIAAAAAAAM
 tile_set = SubResource("TileSet_h2yge")
 
 [node name="Layer 1" type="TileMapLayer" parent="Terrain"]
+z_index = 1
 tile_map_data = PackedByteArray("AAAAAAEAAAABAAYAAAAAAAIAAAABAAYAAAAAAAMAAAABAAYAAAAAAAQAAAABAAYAAAABAAQAAAABAAYAAAABAAMAAAABAAYAAAACAAMAAAABAAYAAAADAAMAAAABAAYAAAADAAQAAAABAAYAAAACAAQAAAABAAYAAAAEAAQAAAABAAYAAAAEAAMAAAABAAYAAAAEAAIAAAABAAYAAAAEAAEAAAABAAYAAAADAAIAAAABAAYAAAADAAEAAAABAAYAAAACAAIAAAABAAYAAAACAAEAAAABAAYAAAABAAEAAAABAAYAAAABAAIAAAABAAYAAAA=")
 tile_set = SubResource("TileSet_h2yge")
 
-[node name="AStar" type="Node" parent="." node_paths=PackedStringArray("terrain_node")]
+[node name="AStar" type="Node" parent="."]
 script = ExtResource("2_753rh")
-terrain_node = NodePath("../Terrain")
-grid_size = Vector2i(8, 8)
-cell_size = Vector2(32, 16)
 
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="Test" type="CharacterBody2D" parent="Characters"]
+z_index = 2
 script = ExtResource("3_mw2no")
-character_name = "Test"
-default_profile = "Knight"
+spawn_layer = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="Characters/Test"]
 scale = Vector2(10, 10)
 texture = SubResource("PlaceholderTexture2D_mw2no")
-region_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/Test"]
 scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_g1f5i")
-
-[node name="MovementProfileManager" type="Node" parent="."]
-script = ExtResource("4_0lt7i")
-
-[node name="SelectionManager" type="Node" parent="."]
-script = ExtResource("5_c6sic")
